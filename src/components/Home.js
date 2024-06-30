@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import WeatherCard from './WeatherCard';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
@@ -9,23 +9,7 @@ const Home = ({ data }) => {
   const [sortedFeatures, setSortedFeatures] = useState(data.features);
   const [sortCriteria, setSortCriteria] = useState('date');
 
-  // Sort features based on the selected criteria
-  const sortFeatures = () => {
-    const sorted = [...data.features].sort((a, b) => {
-      switch (sortCriteria) {
-        case 'date':
-          return a.properties.IrwinFireDiscoveryDateTime.localeCompare(b.properties.IrwinFireDiscoveryDateTime);
-        case 'size':
-          return a.properties.size - b.properties.size;
-        case 'name':
-          return a.properties.fire_name.localeCompare(b.properties.fire_name);
-        default:
-            return a.properties.IrwinFireDiscoveryDateTime.localeCompare(b.properties.IrwinFireDiscoveryDateTime);
-       
-      }
-    });
-    setSortedFeatures(sorted);
-  };
+ 
 
   // Handle change in sort criteria
   const handleSortChange = (event, newValue) => {

@@ -1,14 +1,13 @@
 // WeatherCard.js
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+
 
 const WeatherCard = ({ feature }) => {
   //const [weatherData, setWeatherData] = useState(null);
-  const { latitude, longitude, fire_name, size, initial_imsr_date } = feature.properties;
+  const { fire_name, size, initial_imsr_date } = feature.properties;
 
 //   useEffect(() => {
 //     const fetchWeatherData = async () => {
